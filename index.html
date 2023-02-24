@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5a44f94317.js" crossorigin="anonymous"></script>
+    <title>Keyboard Events</title>
+    <style>
+ 
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .box{
+        position: relative;
+        left: 350px;
+        top: 200px;
+        font-size: 30px;
+      }
+      .animasyon{
+        animation: top 1s forwards;
+      }
+
+      @keyframes top {
+       
+        50%{
+            top:170px
+        }
+        100%{
+            top:200px
+        }
+      }
+   
+
+    </style>
+</head>
+<body>
+
+    <i class="fa-solid fa-dove box"></i>
+   
+    
+  
+    <script>
+    let box = document.querySelector(".box")
+
+    window.onkeydown = function(e){
+       
+        let left = box.offsetLeft
+        let top = box.offsetTop
+       
+        //yukarı 38
+        //sola 37 
+        //alta 40
+        //sağa 39
+
+        if(e.keyCode==40){
+        box.style.top=(top+10)+"px"
+       }
+       else if(e.keyCode==38){
+
+       for (let index = 0; index < 10; index++) {
+        box.classList.add("animasyon")
+        
+       }        
+       
+      
+        
+
+       }
+       else if(e.keyCode==39){
+        box.style.left=(left+10)+"px"
+       }
+       else if(e.keyCode==37){
+        box.style.left=(left-10)+"px"
+       }
+    }
+
+    </script>
+</body>
+</html>
